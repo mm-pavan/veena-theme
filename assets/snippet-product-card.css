@@ -1,0 +1,98 @@
+.product-card{
+  position: relative;
+}
+
+.product-card__link{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-card__link:hover{
+  color: #d03c3f;
+}
+
+.product-card__vendor,.product-card__compare-price{
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.product-card__quick-view{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding:15px;
+}
+
+.product-card__quick-view-button{
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+
+.product-card__left-tags{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+.product-card__discount,.product-card__badge{
+  padding: 5px 10px;
+  background-color: #dd1d1d;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 20px;
+}
+
+.product-card__badge{
+  background-color: #22570e;
+}
+
+.product-card__inventory-quantity{
+  color: #008a00;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.product-card__varient-options{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.product-card__color-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.product-card__color-radio{
+  display: none;
+}
+
+.product-card__color-codes{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    border-radius: var(--variant-pills-radius);
+    width: calc(14px + (var(--variant-pills-border-width) * 2));
+    height: calc(14px + (var(--variant-pills-border-width) * 2));
+    min-width: calc(14px + (var(--variant-pills-border-width) * 2));
+    min-height: calc(14px + (var(--variant-pills-border-width) * 2));
+    box-shadow: 0 0 0 1px rgba(var(--color-foreground),.1);
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 17px;
+    margin: 2px;
+    line-height: 1;
+    border: var(--variant-pills-border-width) solid rgba(var(--color-foreground),var(--variant-pills-border-opacity));
+}
+

@@ -1,0 +1,75 @@
+{{ "snippet-product-card.css" | asset_url | stylesheet_tag }}
+
+
+{% liquid
+  assign current_varient = product.selected_or_first_available_variant
+  assign featured_image = current_varient.image | default : product.featured_image
+  assign discountPercentage = current_varient.compare_at_price | minus: current_varient.price | times: 100 | divided_by: current_varient.compare_at_price
+%}
+
+
+<product-card class="product-card" data-product-handle="{{ product.handle }}" data-section-id="{{ section_id }}">
+  <a href="{{ product.url }}">
+    <div class="product-card__image">
+      {% render "responsive-image", desktopImage: featured_image, class: "media media--portrait global-media-settings" %}
+    </div>
+  </a>
+
+  <div class="product-card__quick-view">
+    <a href="#" class="custom-button-secondary_color product-card__quick-view-button"> Quick Look</a>    
+  </div>
+
+  <div class="product-card__left-tags">
+    {% for tag in product.tags %}
+      {% if tag contains "New" %}
+        {% assign badge_text = tag | split: '_' | first %}
+      {% endif %}  
+    {% endfor %} 
+    {% if badge_text != blank %}
+      <span class="h5 product-card__badge">
+        {{ badge_text }}
+      </span>
+    {% endif %}
+    {% if discountPercentage > 0 %}
+      <span class="h5 product-card__discount">
+        {{ discountPercentage }}%off
+      </span>
+    {% endif %}
+  </div>
+
+
+  
+  <div class="product-card__content {{ product_text_alignment }}">
+    <div class="product-card-varients">
+      {% for varient_option in product.options_with_values %}
+        {% if varient_option.name == "Color" %}
+          <ul class="product-card__varient-options">           
+            {% for option in varient_option.values %}
+              <li class="">
+                <input type="radio" class="product-card__color-radio" id="{{ current_varient.id | append: option }}"  value={{ option }} {% if varient_option.selected_value == option %}checked{% endif %} name="color-{{ current_varient.id }}">
+                <label style="background: {{ option }}" class="product-card__color-codes" for="{{ current_varient.id | append: option  }}"></label>
+              </li>
+            {% endfor %}       
+          </ul>
+        {% endif %}  
+      {% endfor %}  
+    </div>
+    
+    <h2 class="h5 product-card__vendor"> {{ product.vendor }} </h2>
+    <a class="h3 product-card__link" href="{{ current_varient.url }}"> {{ product.title }} </a> 
+    <div class="product-card__prices">
+      {% if product.price_varies %}
+        <span class="h3"> From {{ product.price_min | money_with_currency }}</span>
+      {% else %}
+        <span class="h3">  {{ current_varient.price | money_with_currency }}</span>   
+      {% endif %}  
+      {% if current_varient.compare_at_price > current_varient.price %}
+        <s class="h4 product-card__compare-price"> {{ current_varient.compare_at_price | money_with_currency }} </s>
+      {% endif %}
+      <div class="h4 product-card__inventory-quantity">{{ current_varient.inventory_quantity }} in stock</div>
+    </div>
+  </div>
+  <script>
+    {{ product.variants | json }}
+  </script>
+</product-card>

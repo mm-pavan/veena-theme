@@ -1,0 +1,198 @@
+{% schema %}
+  {
+    "name": "Custom Rich Text",
+    "settings": [
+      {
+        "type" : "header",
+        "content" : "Content Settings"
+      },
+      {
+        "type" : "select",
+        "id" : "content_position",
+        "label" : "Content position",
+        "options": [
+          {
+            "value" : "justify-start",
+            "label" : "Left"
+          },
+          {
+            "value" : "justify-center",
+            "label" : "Center"
+          },
+          {
+            "value" : "justify-end",
+            "label" : "Right"
+          }
+        ],
+        "default" : "justify-center"
+      },
+      {
+        "type" : "select",
+        "id" : "content_alignment",
+        "label" : "Content alignment",
+        "options": [
+          {
+            "value" : "left",
+            "label" : "Left"
+          },
+          {
+            "value" : "center",
+            "label" : "Center"
+          },
+          {
+            "value" : "right",
+            "label" : "Right"
+          }
+        ],
+        "default" : "center"
+      },
+      {
+      "type" : "header",
+      "content" : "Section padding settings"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Section Padding top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Section Padding bottom",
+        "default": 36
+      }
+    ],
+    "blocks" : [
+      {
+        "type" : "heading",
+        "name" : "Heading",
+        "limit" : 3,
+        "settings" : [
+          {
+            "type" : "inline_richtext",
+            "id" : "heading",
+            "label" : "Heading",
+            "default" : "Talk about your brand"
+          },
+          {
+            "type" : "select",
+            "id" : "heading_size",
+            "label" : "Heading Size" ,
+            "options" : [
+              {
+                "value" : "h2",
+                "label" : "small"
+              },
+              {
+                "value" : "h1",
+                "label" : "medium"
+              },
+              {
+                "value" : "h0",
+                "label" : "large"
+              }
+            ],
+            "default" : "h2"
+           }
+        ]
+      },
+      {
+        "type" : "caption",
+        "name" : "Caption",
+        "limit" : 3,
+        "settings" : [
+          {
+            "type" : "text",
+            "id" : "caption",
+            "label" : "Caption",
+            "default" : "Enter Caption"
+          },
+          {
+            "type" : "select",
+            "id" : "caption_text_style",
+            "label" : "Text style",
+            "options" : [
+              {
+                "value" : "uppderCase",
+                "label" : "Upper case"
+              },
+              {
+                "value" : "lowercase",
+                "label" : "Lower case"
+              },
+              {
+                "value" : "subtitle",
+                "label" : "Subtitle"
+              }
+            ],
+            "default" : "uppderCase"
+          },
+          {
+            "type" : "select",
+            "id" : "caption_size",
+            "label" : "Caption size" ,
+            "options" : [
+              {
+                "value" : "h4",
+                "label" : "small"
+              },
+              {
+                "value" : "h3",
+                "label" : "medium"
+              },
+              {
+                "value" : "h2",
+                "label" : "large"
+              }
+            ],
+            "default" : "h3"
+          }
+        ]
+      },
+      {
+        "type" : "description",
+        "name" : "Description",
+        "limit": 3,
+        "settings" : [
+          {
+            "type" : "richtext",
+            "id" : "description_text",
+            "label" : "Description",
+            "default" : "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        ]
+      },
+      {
+        "type" : "button",
+        "name" : "Button",
+        "limit" : 2,
+        "settings" : [
+          {
+            "type" : "text",
+            "id" : "button_text",
+            "label" : "Button text"
+          },
+          {
+            "type" : "url",
+            "id" : "button_link",
+            "label" : "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets" : [
+      {
+        "name": "Custom Rich Text"
+      }
+    ]
+  }
+{% endschema %}
