@@ -34,6 +34,9 @@
   top: 0;
   left: 0;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .product-card__discount,.product-card__badge{
@@ -41,7 +44,7 @@
   background-color: #dd1d1d;
   color: #fff;
   font-size: 11px;
-  display: block;
+  
   border-radius: 20px;
 }
 
