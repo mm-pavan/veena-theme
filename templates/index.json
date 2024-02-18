@@ -120,6 +120,146 @@
         "padding_bottom": 36
       }
     },
+    "custom_collections_list_fUaV48": {
+      "type": "custom-collections-list",
+      "blocks": {
+        "collection_blocks_DrTkhF": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/6.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/6.jpg",
+            "heading": "Accessories",
+            "section_button_text": "Shop Now",
+            "section_button_link": "",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_hGVUQC": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/4.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/4.jpg",
+            "heading": "Men's Jacket",
+            "section_button_text": "Shop now",
+            "section_button_link": "shopify:\/\/collections\/shirts",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_T6b8Aw": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/1.jpg",
+            "heading": "Shoes",
+            "section_button_text": "shop now",
+            "section_button_link": "shopify:\/\/collections\/smart-products",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_iHTTjR": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "heading": "Handbags",
+            "section_button_text": "shop now",
+            "section_button_link": "",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_pFCjLT": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/5.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/5.jpg",
+            "heading": "Best Selling",
+            "section_button_text": "shop now",
+            "section_button_link": "",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_HTHQih": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/8.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/8.jpg",
+            "heading": "T shirt",
+            "section_button_text": "shop now",
+            "section_button_link": "shopify:\/\/collections\/bottoms",
+            "slide_animation": "loop"
+          }
+        }
+      },
+      "block_order": [
+        "collection_blocks_DrTkhF",
+        "collection_blocks_hGVUQC",
+        "collection_blocks_T6b8Aw",
+        "collection_blocks_iHTTjR",
+        "collection_blocks_pFCjLT",
+        "collection_blocks_HTHQih"
+      ],
+      "settings": {
+        "section_heading": "Captivating Collection",
+        "section_button_text": "View All",
+        "section_button_link": "#",
+        "color_scheme": "scheme-2",
+        "slider_autoplay": false,
+        "slide_dots": false,
+        "slide_arrows": true,
+        "infinite_scroll": false,
+        "slider_autoplay_duration": 3,
+        "text_alignment": "center",
+        "alignment_position": "align-center justify-center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_image_with_text_grid_x8RtKC": {
+      "type": "custom-image-with-text-grid",
+      "blocks": {
+        "image_grid_6ABiUU": {
+          "type": "imageGrid",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Rectangle_55_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Rectangle_55_1.png",
+            "caption": "Men's",
+            "heading": "Introducing Our Distinguished Men's Clothing Collection",
+            "description": "<p><\/p><p><\/p>",
+            "button_text": "Explore",
+            "button_link": "#",
+            "banner_color_scheme": "scheme_1",
+            "text_size": "h2",
+            "text_alignment": "center",
+            "alignment_position": "align-end justify-center"
+          }
+        },
+        "image_grid_T7hghT": {
+          "type": "imageGrid",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Rectangle_56_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Rectangle_56_1.png",
+            "caption": "Women's",
+            "heading": "Elevate Your Wardrobe With Our Women's Clothing Collection",
+            "description": "",
+            "button_text": "Explore",
+            "button_link": "#",
+            "banner_color_scheme": "scheme_1",
+            "text_size": "h2",
+            "text_alignment": "center",
+            "alignment_position": "align-end justify-center"
+          }
+        }
+      },
+      "block_order": [
+        "image_grid_6ABiUU",
+        "image_grid_T7hghT"
+      ],
+      "settings": {
+        "image_padding": "image-potrait",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "custom_product_list_4HUB9m": {
       "type": "custom-product-list",
       "settings": {
@@ -148,50 +288,6 @@
         "alignment_position": "align-center justify-center",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "custom_image_with_text_grid_x8RtKC": {
-      "type": "custom-image-with-text-grid",
-      "blocks": {
-        "image_grid_6ABiUU": {
-          "type": "imageGrid",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/Rectangle_55.png",
-            "caption": "Men's",
-            "heading": "Introducing Our Distinguished Men's Clothing Collection",
-            "description": "<p><\/p><p><\/p>",
-            "button_text": "Explore",
-            "button_link": "#",
-            "banner_color_scheme": "scheme_1",
-            "text_size": "h2",
-            "text_alignment": "center",
-            "alignment_position": "align-end justify-center"
-          }
-        },
-        "image_grid_T7hghT": {
-          "type": "imageGrid",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/Rectangle_56.png",
-            "caption": "Women's",
-            "heading": "Elevate Your Wardrobe With Our Women's Clothing Collection",
-            "description": "",
-            "button_text": "Explore",
-            "button_link": "#",
-            "banner_color_scheme": "scheme_1",
-            "text_size": "h2",
-            "text_alignment": "center",
-            "alignment_position": "align-end justify-center"
-          }
-        }
-      },
-      "block_order": [
-        "image_grid_6ABiUU",
-        "image_grid_T7hghT"
-      ],
-      "settings": {
-        "image_padding": "image-potrait",
-        "padding_top": 60,
-        "padding_bottom": 0
       }
     },
     "custom_usp_BGXkTw": {
@@ -329,7 +425,7 @@
         "testimonia_blocks_xEe9mb": {
           "type": "testimonia-blocks",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.jpg",
+            "image": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.jpg",
             "heading": "Sarah Mitchell",
             "designation": "Stylist",
             "comment": "<p>A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.<\/p>"
@@ -338,7 +434,7 @@
         "testimonia_blocks_pa4zda": {
           "type": "testimonia-blocks",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.jpg",
+            "image": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.jpg",
             "heading": "James Harper",
             "designation": "Fashion Editor",
             "comment": "<p>As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.<\/p>"
@@ -372,109 +468,16 @@
       ],
       "settings": {
         "section_heading": "Our Customers Review",
-        "slider_autoplay": false,
-        "slide_dots": false,
+        "slider_autoplay": true,
+        "slide_dots": true,
         "slide_arrows": true,
-        "infinite_scroll": false,
+        "infinite_scroll": true,
         "slide_animation": "slide",
         "slider_autoplay_duration": 3000,
         "text_alignment": "center",
         "color_scheme": "scheme-4",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "custom_collections_list_fUaV48": {
-      "type": "custom-collections-list",
-      "blocks": {
-        "collection_blocks_DrTkhF": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/6.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/6.jpg",
-            "heading": "Accessories",
-            "section_button_text": "Shop Now",
-            "section_button_link": "",
-            "slide_animation": "loop"
-          }
-        },
-        "collection_blocks_hGVUQC": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/4.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/4.jpg",
-            "heading": "Men's Jacket",
-            "section_button_text": "Shop now",
-            "section_button_link": "shopify:\/\/collections\/shirts",
-            "slide_animation": "loop"
-          }
-        },
-        "collection_blocks_T6b8Aw": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/1.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/1.jpg",
-            "heading": "Shoes",
-            "section_button_text": "shop now",
-            "section_button_link": "shopify:\/\/collections\/smart-products",
-            "slide_animation": "loop"
-          }
-        },
-        "collection_blocks_iHTTjR": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
-            "heading": "Handbags",
-            "section_button_text": "shop now",
-            "section_button_link": "",
-            "slide_animation": "loop"
-          }
-        },
-        "collection_blocks_pFCjLT": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/5.jpg",
-            "heading": "Best Selling",
-            "section_button_text": "shop now",
-            "section_button_link": "",
-            "slide_animation": "loop"
-          }
-        },
-        "collection_blocks_HTHQih": {
-          "type": "collection-blocks",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/8.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/8.jpg",
-            "heading": "T shirt",
-            "section_button_text": "shop now",
-            "section_button_link": "shopify:\/\/collections\/bottoms",
-            "slide_animation": "loop"
-          }
-        }
-      },
-      "block_order": [
-        "collection_blocks_DrTkhF",
-        "collection_blocks_hGVUQC",
-        "collection_blocks_T6b8Aw",
-        "collection_blocks_iHTTjR",
-        "collection_blocks_pFCjLT",
-        "collection_blocks_HTHQih"
-      ],
-      "settings": {
-        "section_heading": "Our Customers Review",
-        "section_button_text": "View All",
-        "section_button_link": "",
-        "color_scheme": "scheme-2",
-        "slider_autoplay": false,
-        "slide_dots": false,
-        "slide_arrows": true,
-        "infinite_scroll": false,
-        "slider_autoplay_duration": 3,
-        "text_alignment": "center",
-        "alignment_position": "align-center justify-center",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "custom_faq_section_DeEbDk": {
@@ -537,12 +540,12 @@
     "hero_banner_slider_hMhRdj",
     "custom_rich_text_section_xnXzEz",
     "custom_image_with_text_grid_cH7kLX",
-    "custom_product_list_4HUB9m",
+    "custom_collections_list_fUaV48",
     "custom_image_with_text_grid_x8RtKC",
+    "custom_product_list_4HUB9m",
     "custom_usp_BGXkTw",
     "custom_lookbook_CAwQWC",
     "custom_testimonial_7n4Rd4",
-    "custom_collections_list_fUaV48",
     "custom_faq_section_DeEbDk"
   ]
 }
