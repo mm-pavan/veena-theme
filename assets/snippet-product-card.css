@@ -100,3 +100,9 @@
     border: var(--variant-pills-border-width) solid rgba(var(--color-foreground),var(--variant-pills-border-opacity));
 }
 
+.product-card__variant-color{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+

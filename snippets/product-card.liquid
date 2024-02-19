@@ -36,24 +36,22 @@
       </span>
     {% endif %}
   </div>
-
-
-  
   <div class="product-card__content {{ product_text_alignment }}">
+    {% unless product.has_only_default_variant %}
     <div class="product-card-varients">
-      {% for varient_option in product.options_with_values %}
-        {% if varient_option.name == "Color" %}
-          <ul class="product-card__varient-options">           
-            {% for option in varient_option.values %}
-              <li class="">
-                <input type="radio" class="product-card__color-radio" id="{{ current_varient.id | append: option }}"  value={{ option }} {% if varient_option.selected_value == option %}checked{% endif %} name="color-{{ current_varient.id }}">
-                <label style="background: {{ option }}" class="product-card__color-codes" for="{{ current_varient.id | append: option  }}"></label>
-              </li>
+      {% for product_option in product.options_with_values %}
+        {% assign optionName = product_option.name | handleize %}
+        {% if optionName == "color" %}
+          <ul class="product-card__varient-options item-swatch">           
+            {% for value in product_option.values %}
+              {% assign colorName = value  | handleize %}
+              <li class="product-card__variant-color" style="background-color:{{ colorName }};" data-value={{ colorName }}></li>
             {% endfor %}       
           </ul>
         {% endif %}  
       {% endfor %}  
     </div>
+  {% endunless %}
     
     <h2 class="h5 product-card__vendor"> {{ product.vendor }} </h2>
     <a class="h3 product-card__link" href="{{ current_varient.url }}"> {{ product.title }} </a> 
