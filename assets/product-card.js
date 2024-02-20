@@ -63,6 +63,7 @@ class ProductCard extends HTMLElement {
   }
 
   getUpdatedCard() {
+    console.log(this.sectionId)
     const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
 
     fetch(url)

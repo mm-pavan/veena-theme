@@ -55,7 +55,7 @@
                         {% assign swatch_image = downcased_option_value | append: ".jpg" | file_url %}
                         <span class="product-card__swatch product-card__color-swatch" style="background-color: {{ downcased_option_value }}; background-image: url({{ swatch_image }}); width:30px;"></span>
                       {% else %}
-                        <span class="product-card__swatch">{{ downcased_option_value }}</span>
+                        <span class="product-card__swatch">{{ option_value | first }}</span>
                       {% endif %}
                     </label>
                   </li>
