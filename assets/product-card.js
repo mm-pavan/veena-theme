@@ -1,5 +1,5 @@
-/*
-Variant selection with variants
+
+// Variant selection with variants
 class ProductCard extends HTMLElement {
   constructor() {
     super();
@@ -23,7 +23,7 @@ class ProductCard extends HTMLElement {
 
   getUpdatedCard() {
     const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
-
+    console.log("section id: ",this.sectionId)
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
@@ -34,48 +34,48 @@ class ProductCard extends HTMLElement {
 }
 
 customElements.define('product-card', ProductCard);
-*/
+
 
 // Variant selection with options
-class ProductCard extends HTMLElement {
-  constructor() {
-    super();
+// class ProductCard extends HTMLElement {
+//   constructor() {
+//     super();
 
-    this.productHandle = this.dataset.productHandle;
-    this.sectionId = this.dataset.sectionId;
+//     this.productHandle = this.dataset.productHandle;
+//     this.sectionId = this.dataset.sectionId;
 
-    this.variantData = JSON.parse(this.querySelector("script").textContent);
-    this.addEventListener("change", this.onOptionChange);
-  }
+//     this.variantData = JSON.parse(this.querySelector("script").textContent);
+//     this.addEventListener("change", this.onOptionChange);
+//   }
 
-  onOptionChange() {
-    console.log("started");
-    this.selectedOptions = Array.from(
-      this.querySelectorAll('input[type="radio"]:checked'),
-      (input) => input.value
-    );
-    this.currentVariant = this.variantData.find(
-      (item) =>
-        JSON.stringify(item.options) == JSON.stringify(this.selectedOptions)
-    );
+//   onOptionChange() {
+//     console.log("started");
+//     this.selectedOptions = Array.from(
+//       this.querySelectorAll('input[type="radio"]:checked'),
+//       (input) => input.value
+//     );
+//     this.currentVariant = this.variantData.find(
+//       (item) =>
+//         JSON.stringify(item.options) == JSON.stringify(this.selectedOptions)
+//     );
 
-    this.getUpdatedCard();
-  }
+//     this.getUpdatedCard();
+//   }
 
-  getUpdatedCard() {
-    console.log(this.sectionId)
-    const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
+//   getUpdatedCard() {
+//     console.log(this.sectionId)
+//     const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
 
-    fetch(url)
-      .then((response) => response.text())
-      .then((responseText) => {
-        const html = new DOMParser().parseFromString(responseText, "text/html");
-        this.innerHTML = html.querySelector(
-          `[data-product-handle="${this.productHandle}"]`
-        ).innerHTML;
-      });
-    conosle.log("fetched");
-  }
-}
+//     fetch(url)
+//       .then((response) => response.text())
+//       .then((responseText) => {
+//         const html = new DOMParser().parseFromString(responseText, "text/html");
+//         this.innerHTML = html.querySelector(
+//           `[data-product-handle="${this.productHandle}"]`
+//         ).innerHTML;
+//       });
+//     conosle.log("fetched");
+//   }
+// }
 
-customElements.define("product-card", ProductCard);
+// customElements.define("product-card", ProductCard);
