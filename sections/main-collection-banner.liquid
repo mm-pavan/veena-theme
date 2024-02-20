@@ -30,7 +30,7 @@
       height="{{ collection.image.height }}"
     >
     <img 
-      src="{{ mobile_image }}"
+      src="{{ mobile_image | image_url: width: 500}}"
       sizes="(min-width: 1600px) 750px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
       alt="{{ mobile_image.alt | default: collection.title | escape }}"
       loading="lazy"
@@ -38,7 +38,7 @@
       width="{{ mobile_image.width | default: 800 }}"
       height="{{ mobile_image.height | default: 800 }}"
     >
-
+    
     <div class="collection-banner__info">
       <h1 class="collection-banner__title">{{ collection.title }}</h1>
       
@@ -51,44 +51,7 @@
   </div>
 
   {% style %}
-    .collection-banner {
-      position: relative;
-    }
-    .collection-banner__image,
-    .collection-banner__image-mobile {
-      width: 100%;
-      max-width: 100%;
-      max-height: 350px;
-      object-fit: cover;
-    }
-
-    .collection-banner__image-mobile {
-      display: none;
-    }
-
-    .collection-banner__info {      
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      padding: 15px;
-      position: absolute;
-      max-width: 500px;
-      text-align: center;
-      transform: translate(-50%, -50%);
-    }
-
-    .collection-banner__title {
-      margin: 0 0 15px;
-    }
-
-    @media only screen and (max-width: 749px) {
-      .collection-banner__image {
-        display: none;
-      }
-      .collection-banner__image-mobile {
-        display: block;
-      }
-    }
+    
   {% endstyle %}
 {%- endif -%}
 

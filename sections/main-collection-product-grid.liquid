@@ -27,6 +27,10 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    {% render 'breadcrumbs' %}
+  </div>
+  
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -89,8 +93,10 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
+    
 
     <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
+      
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
@@ -100,6 +106,27 @@
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
+          <ul class="parent">
+            {% for link in linklists['collection-menu'].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links != blank %}
+              <ul class="child">
+                {% for child_link in link.links %}  
+                <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+                {% if child_link.links != blank %}
+                  <ul class="grandchild">
+                  {% for grandchild_link in child_link.links %}  
+                    <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}   
+                </li>
+                {% endfor %}
+              </ul> 
+            {% endif %} 
+            </li>
+            {% endfor %}
+            </ul>
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,
