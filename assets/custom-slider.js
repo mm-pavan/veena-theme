@@ -3,7 +3,6 @@ class CustomSlider extends HTMLElement {
     super();
     this.splideEl = this.querySelector(".splide");
     this.options = JSON.parse(this.splideEl.dataset.sliderOptions);
-    console.log(this.options)
     this.mountSplider();
   }
 
