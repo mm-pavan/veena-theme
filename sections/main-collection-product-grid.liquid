@@ -159,6 +159,9 @@
             </div>
           </div>
         {%- else -%}
+        <div class="button layout-button" data-col-number='4'>4 col</div>
+        <div class="button layout-button" data-col-number='3'>3 col</div>
+        <div class="button layout-button" data-col-number='2'>2 col</div>
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
             <ul
@@ -208,6 +211,21 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+
+<script>
+  const productGrid = document.querySelector('#product-grid');
+  const layoutButtons = document.querySelectorAll('.layout-button');
+  layoutButtons.forEach(each => {
+    each.addEventListener('click', event => {
+      event.preventDefault();
+      console.log(each.dataset.colNumber)
+      productGrid.classList.forEach(function(className){
+        if(className.endsWith('desktop')){
+          productGrid.classList.replace(className, `grid--${each.dataset.colNumber}-col-desktop`)
+        }
+      })
+    }) 
+</script>
 
 {% schema %}
 {
