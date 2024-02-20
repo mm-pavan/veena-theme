@@ -218,7 +218,6 @@
   layoutButtons.forEach(each => {
     each.addEventListener('click', event => {
       event.preventDefault();
-      console.log(each.dataset.colNumber)
       productGrid.classList.forEach(function(className){
         if(className.endsWith('desktop')){
           productGrid.classList.replace(className, `grid--${each.dataset.colNumber}-col-desktop`)

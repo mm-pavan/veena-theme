@@ -14,7 +14,8 @@
 }
 
 .rating-star {
-  --color-rating-star: rgb(var(--color-foreground));
+  /* --color-rating-star: rgb(var(--color-foreground)); */
+  --color-rating-star: red;
   --percent: calc(
     (
         var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) /
@@ -31,11 +32,12 @@
 
 .rating-star::before {
   content: '★★★★★';
-  background: linear-gradient(
+  background: yellow;
+  /* background: linear-gradient(
     90deg,
     var(--color-rating-star) var(--percent),
     rgba(var(--color-foreground), 0.15) var(--percent)
-  );
+  ); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
