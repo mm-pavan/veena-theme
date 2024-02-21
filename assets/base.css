@@ -3888,6 +3888,9 @@ details-disclosure > details {
   border :1px solid rgb(10, 9, 9);
   border-radius: 50%;
 }
+.product-card__color-swatch:hover{
+  box-shadow: 0 0 0 3px white inset;
+}
 .product-card__options{
   list-style-type: none;
   padding-left :0;
@@ -3906,8 +3909,13 @@ details-disclosure > details {
   display: inline-block;
   width: 40px;
 }
+
 .product-card__input-option-value{
   /* visibility: hidden; */
   display: none;
 }
 
+.item-swatch .swatch-circle{
+  border-radius: 50%;
+  margin: 5px;
+}

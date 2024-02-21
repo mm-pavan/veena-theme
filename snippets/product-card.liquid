@@ -1,4 +1,3 @@
-{{ 'snippet-product-card.css' | asset_url | stylesheet_tag }}
 
 {% liquid
   assign current_varient = product.selected_or_first_available_variant
@@ -7,7 +6,7 @@
 %}
 
 
-<product-card class="product-card" data-product-handle="{{ product.handle }}" data-section-id="{{ section_id }}">
+<product-card class="product-card" data-product-handle="{{ product.url | within : collection }}" data-section-id="{{ section_id }}">
   <a href="{{ product.url }}">
     <div class="product-card__image">
       {% render 'responsive-image',

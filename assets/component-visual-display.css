@@ -88,3 +88,22 @@
 .visual-display--presentation-swatch .visual-display__image {
   object-fit: cover;
 }
+.facets-swatch-color{
+  width: 25px; 
+  height: 25px; 
+  margin-right: 5px; 
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.facets-swatch-color:hover{
+  box-shadow: 0 0 0 3px rgb(255, 255, 255);
+  /* box-shadow: 0 0 0 3px rgb(var(--color-background)) inset; */
+}
+.facets__form-vertical{
+  width: 380px;
+}
+.facets-wrapper .parent{
+  width: 380px;
+}

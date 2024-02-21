@@ -159,9 +159,11 @@
             </div>
           </div>
         {%- else -%}
-        <div class="button layout-button" data-col-number='4'>4 col</div>
-        <div class="button layout-button" data-col-number='3'>3 col</div>
-        <div class="button layout-button" data-col-number='2'>2 col</div>
+        <div>
+          <button class="button layout-button" data-col-number='4'>4 col</button>
+          <button class="button layout-button" data-col-number='3'>3 col</button>
+          <button class="button layout-button" data-col-number='2'>2 col</button>
+        </div>
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
             <ul
@@ -184,7 +186,11 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+                  {% render 'product-card',
+                    product: product, 
+                    section_id: section.id
+                  %}
+                  {% comment %} {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -194,7 +200,7 @@
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
-                  %}
+                  %} {% endcomment %}
                 </li>
               {%- endfor -%}
             </ul>
@@ -216,14 +222,15 @@
   const productGrid = document.querySelector('#product-grid');
   const layoutButtons = document.querySelectorAll('.layout-button');
   layoutButtons.forEach(each => {
-    each.addEventListener('click', event => {
-      event.preventDefault();
-      productGrid.classList.forEach(function(className){
-        if(className.endsWith('desktop')){
-          productGrid.classList.replace(className, `grid--${each.dataset.colNumber}-col-desktop`)
+    each.addEventListener("click",()=>{
+      productGrid.classList.forEach(function(className) {
+        if (className.endsWith('desktop')) {
+          // Replace the class name
+          productGrid.classList.replace(className, `grid--${each.dataset.colNumber}-col-desktop`);
         }
-      })
-    }) 
+      });
+    })
+  })
 </script>
 
 {% schema %}
