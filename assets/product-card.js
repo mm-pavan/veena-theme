@@ -36,7 +36,7 @@
 // customElements.define('product-card', ProductCard);
 
 
-Variant selection with options
+// Variant selection with options
 class ProductCard extends HTMLElement {
   constructor() {
     super();
