@@ -179,7 +179,8 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                  {{ product.description }}
+                  {% comment %} {{ product.description }} {% endcomment %}
+                  {{ product.selected_or_first_available_variant.metafields.custom.variant_one_description }}
                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
@@ -228,6 +229,7 @@
                     <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
                   </span>
                 </label>
+                
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -352,6 +354,7 @@
                     </span>
                   {%- endif -%}
                 </div>
+                
                 {%- if product.quantity_price_breaks_configured? -%}
                   <volume-pricing class="parent-display no-js-hidden" id="Volume-{{ section.id }}">
                     {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
@@ -387,6 +390,7 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
+              
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -416,6 +420,47 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              <style>
+                .product-page-payment-section{
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+                .icon {
+                  width: 3.125em;
+                }
+                .product_payment-icons{
+                  list-style-type: none;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                }
+                .visuallyhidden {
+                  border: 0;
+                  clip: rect(0 0 0 0);
+                  height: 1px;
+                  margin: -1px;
+                  overflow: hidden;
+                  padding: 0;
+                  position: absolute;
+                  width: 1px;
+                  white-space: nowrap;
+                }
+                </style>
+                
+                {%- unless shop.enabled_payment_types == empty -%}
+                  <div class="product-page-payment-section">
+                    <span class="">Secure checkout with</span>
+                    
+                    <ul class="product_payment-icons">
+                      {%- for type in shop.enabled_payment_types -%}
+                        <li>
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endunless -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -592,7 +637,7 @@
     </script>
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
-
+  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {
@@ -638,6 +683,7 @@
         ],
       {%- endif %}
       "description": {{ product.description | strip_html | json }},
+      {% comment %} "description": {{ product.selected_or_first_available_variant.custom.variant_one_description | strip_html | json }}, {% endcomment %}
       {% if product.selected_or_first_available_variant.sku != blank -%}
         "sku": {{ product.selected_or_first_available_variant.sku | json }},
       {%- endif %}

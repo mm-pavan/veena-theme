@@ -1190,6 +1190,8 @@ class VariantSelects extends HTMLElement {
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
+    const price = document.getElementById(`price-${this.dataset.section}`);
+    const currentPrice= price.querySelector('.price-item').textContent
     if (!addButton) return;
 
     if (disable) {
@@ -1197,7 +1199,7 @@ class VariantSelects extends HTMLElement {
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
-      addButtonText.textContent = window.variantStrings.addToCart;
+      addButtonText.textContent = window.variantStrings.addToCart + currentPrice;
     }
 
     if (!modifyClass) return;

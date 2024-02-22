@@ -482,3 +482,26 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+
+.custom-grid-change-container button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: 0.3s ease;
+  margin-right: 10px;
+  vertical-align: middle;
+  min-width: 45px;
+  min-height: 45px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.custom-grid-change-container button svg {
+  height: 18px;
+  fill: rgba(0, 0, 0, 0.6);
+}
+
+.custom-grid-change-container button svg:hover {
+  fill: rgb(0, 0, 0);
+}

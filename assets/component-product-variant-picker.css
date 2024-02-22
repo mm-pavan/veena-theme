@@ -156,3 +156,11 @@ variant-selects {
   }
 }
 /* End custom styles for Swatch display type */
+
+.product-variant-options__color-swatch{
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 0 3px rgb(var(--color-background)) inset;
+  border: 1px solid red;
+}

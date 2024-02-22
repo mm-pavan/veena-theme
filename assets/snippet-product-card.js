@@ -4,30 +4,35 @@ class ProductCard extends HTMLElement {
     this.productHandle = this.dataset.productHandle;
     this.sectionId = this.dataset.sectionId;
 
-    this.variantData = JSON.parse(this.querySelector('script').textContent)
-    this.addEventListener('change',this.onVariantChange)
-
+    this.variantData = JSON.parse(this.querySelector("script").textContent);
+   
+    // Attach event listeners
+    this.attachEventListeners();
   }
 
-  async onVariantChange(){
-    this.selectedOptions = Array.from(this.querySelectorAll('input[type=radio]:checked'), input => input.value)
-    this.currentVariant = this.variantData.find(item => JSON.stringify(item.options) == JSON.stringify(this.selectedOptions))
-      
-      this.getUpdatedCard();
-    }
-  
-    getUpdatedCard() {
-      const url = `${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
-  
-      fetch(url)
-        .then((response) => response.text())
-        .then((responseText) => {
-          const html = new DOMParser().parseFromString(responseText, "text/html");
-          this.innerHTML = html.querySelector(`[data-product-handle="${this.productHandle}"]`).innerHTML;
-        });
-    }
+  attachEventListeners() {
+    this.querySelectorAll(".product-card__swatch").forEach(swatch => {
+      swatch.addEventListener('mouseover', this.onHoverVariantChange.bind(this));
+    });
+  }
 
+  onHoverVariantChange() {
+    this.optionName = event.target.dataset.optionValue;
+    this.currentVariant = this.variantData.find((item) => item.title === this.optionName);
+
+    const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
+
+    console.log(url);
+
+    fetch(url)
+      .then((response) => response.text())
+      .then((responseText) => {
+        const html = new DOMParser().parseFromString(responseText, "text/html");
+        this.innerHTML = html.querySelector(`[data-product-handle="${this.productHandle}"]`).innerHTML;
+        // Reattach event listeners after updating content
+        setTimeout(() => {
+          this.attachEventListeners();
+        }, 100);
+      });
+  }
 }
-
-
-customElements.define("product-card", ProductCard)
