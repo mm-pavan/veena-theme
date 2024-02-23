@@ -161,6 +161,7 @@ variant-selects {
   border-radius: 100%;
   width: 40px;
   height: 40px;
+}
+.product-variant-options__color-swatch:hover{
   box-shadow: 0 0 0 3px rgb(var(--color-background)) inset;
-  border: 1px solid red;
 }

@@ -1124,6 +1124,7 @@ class VariantSelects extends HTMLElement {
         const skuSource = html.getElementById(
           `Sku-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
+        document.querySelector('.custom-product-description').innerHTML = html.querySelector('.custom-product-description').innerHTML
         const skuDestination = document.getElementById(`Sku-${this.dataset.section}`);
         const inventorySource = html.getElementById(
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
@@ -1199,7 +1200,7 @@ class VariantSelects extends HTMLElement {
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
-      addButtonText.textContent = window.variantStrings.addToCart + currentPrice;
+      addButtonText.textContent = window.variantStrings.addToCart + " " + currentPrice;
     }
 
     if (!modifyClass) return;
