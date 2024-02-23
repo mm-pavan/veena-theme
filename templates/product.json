@@ -23,7 +23,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
+            "picker_type": "button",
             "swatch_shape": "circle"
           }
         },
@@ -61,9 +61,11 @@
             "image_2": "shopify:\/\/shop_images\/2.svg",
             "heading_2": "Return policy",
             "icon_3": "truck",
+            "image_3": "shopify:\/\/shop_images\/3.svg",
             "heading_3": "secure payment",
             "icon_4": "truck",
-            "heading_4": "Heading"
+            "image_4": "shopify:\/\/shop_images\/4.svg",
+            "heading_4": "Help center 24\/7"
           }
         }
       },
