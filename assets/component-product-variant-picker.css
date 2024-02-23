@@ -162,6 +162,24 @@ variant-selects {
   width: 40px;
   height: 40px;
 }
-.product-variant-options__color-swatch:hover{
+.selected-color-variant:checked + label {
+  border :1px solid red;
   box-shadow: 0 0 0 3px rgb(var(--color-background)) inset;
+}
+.product-variant-options__line-through {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 12px;
+  transform: rotate(45deg);
+  border: none;
+  border-left: 1px solid rgba(var(--color-foreground));
+  opacity: 0.8;
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  margin: 1px;
 }

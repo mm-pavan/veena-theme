@@ -89,6 +89,7 @@
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
+      class="selected-color-variant"
       {% if option.selected_value == value %}
         checked
       {% endif %}
@@ -96,6 +97,15 @@
         class="disabled"
       {% endif %}
     >
+     {% assign optionName = option.name | handleize %}
+      <label for="{{ input_id }}" {% if  optionName  == "color" %} class="product-variant-options__color-swatch" style = "background-color: {{ value }}" {%  endif %}  >
+        {% if  optionName  != "color" %}
+          {{ value -}} 
+          {{ label_unavailable }}
+      {%  endif %}
+      <span {% if option_disabled %}class="product-variant-options__line-through"{% endif %}></span>
+      </label> 
+
       {% assign optionName = option.name | handleize %}
     <label for="{{ input_id }}" {% if optionName == 'color' %}class="product-variant-options__color-swatch" style="background-color: {{ value }}"{% endif %}>
       {% if optionName != 'color' %}
