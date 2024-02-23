@@ -334,7 +334,12 @@
         {%- endif -%}
       </div>
       <div class="footer__column footer__column--info">
+    <h1>
+        
+    </h1>
+          {{ 'mastercard' | payment_type_svg_tag: class: 'icon icon--full-color' }}
         {%- if section.settings.payment_enable -%}
+          
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
             <ul class="list list-payment" role="list">
